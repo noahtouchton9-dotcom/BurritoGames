@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(255, 245, 233);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("https://burritogames.fun/htdocs/views/home/images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    transform: scale(1.05);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 35px;
+    text-align: center;
+    padding-top: 100px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.youtubeiframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkDiv {
+    width: 5px;
+    height: 70%;
+    position: absolute;
+    left: 27%;
+    top: 175px;
+}
+
+#school-dropdown {
+    position: absolute;
+    left: 10%;
+    top: 40px;
+    cursor: pointer;
+}
+
+#upcoming {
+    background-color: rgb(34, 34, 34, 0);
+    width: 25%;
+    height: 70%;
+    margin-top: 10px;
+    font-size: 250%;
+    border-radius: 20px;
+    position: absolute;
+    right: 2%;
+    top: 175px;
+    padding: 20px;
+    padding-left: 60px;
+    border-left: 2px solid rgb(255, 245, 233);
+    border-right: 2px solid rgb(255, 245, 233);
+}
+
+.upcoming-title {
+    font-size: 70px;
+}
+
+#bgMusicToggleCrossout {
+    width: 10px;
+    height: 65px;
+    background-color: rgb(255, 245, 233);
+    position: absolute;
+    left: 52px;
+    top: 30px;
+    transform: rotate(45deg);
+}
+
+#bgMusicToggle {
+    width: 65px;
+    height: 65px;
+    background-image: url("https://burritogames.fun/htdocs/views/home/images/speaker.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;#
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    cursor: pointer;
+}
+
+#site-links h2 {
+    font-size: 70px;
+    text-align: left;
+    padding-top: 20px;
+}
+
+#site-links {
+    background-color: rgb(34, 34, 34, 0);
+    width: 25%;
+    height: 70%;
+    margin-top: 10px;
+    font-size: 250%;
+    border-radius: 20px;
+    position: absolute;
+    left: 2%;
+    top: 175px;
+    padding: 20px;
+    padding-left: 60px;
+    border-left: 2px solid rgb(255, 245, 233);
+    border-right: 2px solid rgb(255, 245, 233);
+}
+
+#site-links h1 {
+    font-size: 300%;
+}
+
+#topbar {
+    background-color: rgb(26, 26, 26, 0.8);
+    width: 100%;
+    height: 130px;
+    position: relative;
+    z-index: 9;
+}
+
+#title {
+    font-size: 75px;
+    color: rgb(255, 245, 233);
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+#title:hover {
+    transform: translateX(-50%) translateY(-6px);
+}
+
+#zoomWarning {
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    bottom: -350px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#youtube {
+    height: 60px;
+    width: 85px;
+    background-image: url("https://burritogames.fun/htdocs/views/home/images/youtube.svg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+#youtube:hover {
+    transform: translateY(-6px);
+}
+
+#github {
+    height: 60px;
+    width: 60px;
+    background-image: url("https://burritogames.fun/htdocs/views/home/images/github.svg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 150px;
+    top: 30px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+#github:hover {
+    transform: translateY(-6px);
+}
+
+#twitch {
+    height: 60px;
+    width: 60px;
+    background-image: url("https://burritogames.fun/htdocs/views/home/images/twitch.svg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 250px;
+    top: 35px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+#twitch:hover {
+    transform: translateY(-6px);
+}
+
+#email {
+    height: 65px;
+    width: 65px;
+    background-image: url("https://burritogames.fun/htdocs/views/home/images/email.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 350px;
+    top: 30px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+#email:hover {
+    transform: translateY(-6px);
+}
