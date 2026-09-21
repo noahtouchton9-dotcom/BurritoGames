@@ -84,6 +84,7 @@
             cursor: pointer;
         }
         
+        
         #upcoming {
             background-color: rgb(34, 34, 34, 0);
             width: 25%;
@@ -206,13 +207,13 @@
         }
         
         #github {
-            height: 60px;
-            width: 60px;
+            height: 65px;
+            width: 65px;
             background-image: url("https://burritogames.fun/htdocs/views/home/images/github.svg");
             background-size: cover;
             background-position: center;
             position: absolute;
-            right: 150px;
+            right: 220px;
             top: 30px;
             z-index: 10;
             transition: transform 0.2s ease;
@@ -220,6 +221,15 @@
         
         #github:hover {
             transform: translateY(-6px);
+        }
+
+        #Language {
+            height: 40px;
+            width: 100px;
+            color: white;
+            background-color: #222;
+            z-index: 10;
+            transition: transform 0.2s ease;
         }
         
         #email {
@@ -229,7 +239,7 @@
             background-size: cover;
             background-position: center;
             position: absolute;
-            right: 150px;
+            right: 220px;
             top: 30px;
             z-index: 10;
             transition: transform 0.2s ease;
@@ -303,7 +313,7 @@
 <body>
     <div id="topbar">
         <a href="http://127.0.0.1:80/">
-            <h1 id="title">Burrito Games</h1>
+            <h1 id="title">Noah Touchton.com</h1>
         </a>
         <a href="https://www.youtube.com/@burritogames_real" title="YouTube">
             <div id="youtube"></div>
@@ -314,19 +324,82 @@
         <a href="mailto:noahtsupport@gmail.com" title="Email">
             <div id="email"></div>
         </a>
+
         
     </div>
     <div id="main-container">
-        <p>Online games for everyone, we create these games for fun and entertainment,<br>
+    <h1 data-i18n="heading">Burrito Games</h1>
+    <p data-i18n="description">Online games for everyone, we create these games for fun and entertainment,<br>
         We hope you enjoy our(mine for now) hard work and would consider subscribing to our<br>
         YouTube channel.
-        </p><br><hr>
+    </p>
     </div>
     <p id="zoomWarning">If everything feels big or clumped together please zoom out(ctr + -)<br>
         stop zooming in or out when these arrows are at the bottom of the screen:<br>
         ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
     </p>
     <script src="https://burritogames.fun/htdocs/views/home/main.js"></script>
+    <!--language button-->
+    
+    <label for="Language">Choose a Language:</label>
+    <div>
+    <select name="Language" id="Language">
+        <option value="Deutsch">Deutsch</option>
+        <option value="English" Selected>English</option>
+        <option value="dansk">dansk</option>
+        <option value="svenska">svenska</option>
+        <option value="Nederlands">Nederlands</option>
+    </select>
+    </div> 
+
+    <script>
+        const translations = {
+            English: {
+                heading: "Burrito Games",
+                description: "Online games for everyone, we create these games for fun and entertainment,<br>We hope you enjoy our (mine for now) hard work and would consider subscribing to our<br>YouTube channel."
+            },
+            Deutsch: {
+                heading: "Burrito Spiele",
+                description: "Online-Spiele für alle, wir erstellen diese Spiele zum Spaß und zur Unterhaltung,<br>Wir hoffen, dir gefällt unsere (momentan meine) harte Arbeit und du würdest in Erwägung ziehen, unseren<br>YouTube-Kanal zu abonnieren."
+            },
+            dansk: {
+                heading: "Burrito Spil",
+                description: "Onlinespil for alle, vi laver disse spil for sjov og underholdning,<br>Vi håber, du nyder vores (mit indtil videre) hårde arbejde og vil overveje at abonnere på vores<br>YouTube-kanal."
+            },
+            svenska: {
+                heading: "burritospel",
+                description: "Onlinespel för alla, vi skapar dessa spel för skoj och underhållning,<br>Vi hoppas att du gillar vårt (mitt just nu) hårda arbete och skulle överväga att prenumerera på vår<br>YouTube-kanal."
+            },
+            Nederlands: {
+                heading: "Burrito Spellen",
+                description: "Online games voor iedereen, we maken deze games voor plezier en vermaak,<br>We hopen dat je ons (voorlopig mijn) harde werk waardeert en ons<br>YouTube-kanaal wilt overwegen te abonneren."
+            }
+        };
+
+        function setLanguage(lang) {
+            const dict = translations[lang];
+            if (!dict) return;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.innerHTML = dict[key];
+                }
+            });
+
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        document.getElementById('Language').addEventListener('change', function () {
+            setLanguage(this.value);
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('selectedLanguage') || 'English';
+            document.getElementById('Language').value = saved;
+            setLanguage(saved);
+        });
+    </script>
 </body>
 
 </html>
